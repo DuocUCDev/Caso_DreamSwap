@@ -32,6 +32,199 @@
         </nav>
     </header>
 
+    <main id="contenido" tabindex="-1">
+        <!-- Pantalla 1: HOME / LANDING -->
+        <section id="home" class="screen" aria-labelledby="home-title">
+            <h2 id="home-title">Bienvenido a DreamSwap</h2>
+            <p>Convierte tus noches en experiencias memorables. Explora, personaliza y programa tu próximo sueño.</p>
+
+            <form aria-label="Buscador de sueños" data-screen="home">
+                <label for="q">¿Que te gustaría soñar esta noche?</label>
+                <input id="q" name="q" type="search" placeholder="Aventura, romance, misterio">
+                <button type="submit">Buscar</button>
+            </form>
+
+            <section aria-labelledby="home-destacados-title">
+                <h3 id="home-destacados-title">Destacados de hoy</h3>
+                <ul class="cards" data-test-id="home-destacados">
+                    <li>
+                        <article>
+                            <h4>Safari en nubes</h4>
+                            <p>Una travesía aérea entre jirafas de vapor y ríos de algodón</p>
+                            <a href="#detalle-sueno" data-action="ver-detalle" data-id="DS001">Ver detalle</a>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <h4>Concierto con tu banda favorita</h4>
+                            <p>Backstage, duetos imposibles y un final épico al amanecer.</p>
+                            <a href="#detalle-sueno" data-action="ver-detalle" data-id="DS002">Ver detalle</a>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <h4>Tiempo con un ser querido</h4>
+                            <p>Un reencuentro cálido para cerrar ciclos y sanar.</p>
+                            <a href="#detalle-sueno" data-action="ver-detalle" data-id="DS003">Ver detalle</a>
+                        </article>
+                    </li>
+                </ul>
+            </section>
+        </section>
+
+        <!-- Pantalla 2: Catalogo -->
+        <section id="catalogo" class="screen" aria-labelledby="catalogo-title">
+            <h2 id="catalogo-title">Catálogo de Sueños</h2>
+
+            <aside aria-label="Filtros">
+                <form data-screen="catalogo-filtros">
+                    <fieldset>
+                        <legend>Categorías</legend>
+                        <label><input type="checkbox" name="cat" id="aventura" /> Aventura</label>
+                        <label><input type="checkbox" name="cat" id="romance" /> Romance</label>
+                        <label><input type="checkbox" name="cat" id="misterio" /> Misterio</label>
+                        <label><input type="checkbox" name="cat" id="ficcion" /> Ficción</label>
+                        <label><input type="checkbox" name="cat" id="comedia" /> Comedia</label>
+                        <label><input type="checkbox" name="cat" id="pesadillas" /> Pesadillas</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Duración</legend>
+                        <label for="duracion">Minutos</label>
+                        <input name="duracion" id="duracion" type="number" min="3" step="5" placeholder="30">
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Intensidad emocional</legend>
+                        <label for="intensidad">Nivel</label>
+                        <select name="intensidad" id="intensidad">
+                            <option value="suave">Suave</option>
+                            <option value="media">Media</option>
+                            <option value="alta">Alta</option>
+                        </select>
+                    </fieldset>
+
+                    <button type="submit">Aplicar filtros</button>
+                </form>
+            </aside>
+
+            <section aria-labelledby="catalogo-listado-title">
+                <h3 id="catalogo-listado-title">Resultados</h3>
+                <ul class="grid" data-test-id="catalogo-listado">
+                    <li>
+                        <article>
+                            <header>
+                                <h4>Explorador de ciudades perdidas</h4>
+                                <p class="meta">Duración: 45 min • Intensidad: Media • Rareza: ★★☆</p>
+                            </header>
+                            <p>Persigue pistas y descubre secretos ocultos con banda sonora inmersiva 8D.</p>
+                            <footer>
+                                <a href="#detalle-sueno" data-action="ver-detalle" data-id="DS101">Ver detalle</a>
+                                <a href="#carrito" data-action="agregar" data-id="DS101">Agregar al carrito</a>
+                            </footer>
+                        </article>
+                    </li>
+
+                    <li>
+                        <article>
+                            <header>
+                                <h4>Comedia improvisada con tus amigos</h4>
+                                <p class="meta">Duración: 30 min • Intensidad: Suave • Rareza: ★☆☆</p>
+                            </header>
+                            <p>Risas espontáneas, escenas absurdas y final feliz garantizado.</p>
+                            <footer>
+                                <a href="#detalle-sueno" data-action="ver-detalle" data-id="DS102">Ver detalle</a>
+                                <a href="#carrito" data-action="agregar" data-id="DS102">Agregar al carrito</a>
+                            </footer>
+                        </article>
+                    </li>
+                </ul>
+            </section>
+        </section>
+
+        <!-- Pantalla 3: Detalle de Sueño -->
+        <section id="detalle-sueno" class="screen" aria-labelledby="detalle-title">
+            <h2 id="detalle-title">Detalle del Sueño</h2>
+            <article data-id="DS101">
+                <header>
+                    <h3>Explorador de ciudades perdidas</h3>
+                    <p class="meta">Duración: 45 min • Intensidad: Media • Rareza: ★★☆</p>
+                </header>
+                <p>Vive una aventura inolvidable entre ruinas antiguas y mapas que cambian en tiempo real.</p>
+
+                <form aria-label="Personalización del sueño" data-screen="detalle-config">
+                    <fieldset>
+                        <legend>Personaliza tu experiencia</legend>
+                        <label for="duracion-detalle">Duración (min)</label>
+                        <input type="number" name="duracion-detalle" id="duracion-detalle" min="15" step="5" placeholder="45">
+                    
+                        <label for="intensidad-detalle">Nivel</label>
+                        <select name="intensidad-detalle" id="intensidad-detalle">
+                            <option value="suave">Suave</option>
+                            <option value="media" selected>Media</option>
+                            <option value="alta">Alta</option>
+                        </select>
+
+                        <label for="extras">Extras</label>
+                        <select name="extras" id="extras" multiple aria-describedby="extra-help">
+                            <option value="8d">Audio 8D</option>
+                            <option value="lucido">Control lúcido</option>
+                            <option value="cameos">Cameos Sorpresa</option>
+                        </select>
+                        <small id="extra-help">Mantén presionado Ctrl o (Cmd) para seleccionar varios.</small>
+                    </fieldset>
+                    <button type="submit" data-action="agregar">Agregar al carrito</button>
+                </form>
+
+                <section aria-labelledby="resenas-title">
+                    <h4 id="resenas-title">Reseñas</h4>
+                    <ul>
+                        <li><strong>Ana</strong> ★★★★★ - "La mejor aventura sin salir de la cama".</li>
+                        <li><strong>Marco</strong> ★★★★☆ - "Gran ambientación, hubiese querido más minutos".</li>
+                    </ul>
+                </section>
+            </article>
+        </section>
+
+        <!-- Pantalla 4: Carrito -->
+        <section id="carrito" class="screen" aria-labelledby="carrito-title">
+            <h2 id="carrito-title">Tu Carrito</h2>
+
+            <table aria-describedby="carrito-resumen">
+                <caption id="carrito-resumen">Resumen de tus sueños seleccionados</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Sueño</th>
+                        <th scope="col">Duración</th>
+                        <th scope="col">Intensidad</th>
+                        <th scope="col">Extras</th>
+                        <th scope="col">Subtotal</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Explorador de ciudades perdidas</td>
+                        <td>45 min</td>
+                        <td>Media</td>
+                        <td>Audio 8D, Control lúcido</td>
+                        <td>24 CR (Créditos REM)</td>
+                        <td>
+                            <a href="#" data-action="editar">Editar</a>
+                            <a href="#" data-action="eliminar">Eliminar</a>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">Total</td>
+                        <td>24 CR</td>
+                        <td><a href="#checkout" data-action="pagar">Ir a Pagar</a></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+    </main>
 </body>
 
 </html>
