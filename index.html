@@ -1,461 +1,464 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DreamSwap – Prototipo HTML</title>
-  <meta name="description" content="Prototipo HTML de pantallas para DreamSwap: el mercado de sueños."/>
-  <!-- Nota: solo HTML. CSS/JS se agregará en etapas siguientes. -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DreamSwap – Prototipo HTML</title>
+    <meta name="description" content="Prototipo HTML de pantallas para DreamSwap: el mercado de sueños." />
+    <!-- Nota: solo HTML. CSS/JS se agregará en etapas siguientes. -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <a href="#contenido" class="skip-link">Saltar al contenido</a>
+    <a href="#contenido" class="skip-link">Saltar al contenido</a>
 
-  <!-- HEADER / NAV -->
-  <header role="banner">
-    <div class="brand">
-      <h1 aria-label="DreamSwap">🌙 DreamSwap</h1>
-      <p class="tagline">Mercado de sueños personalizados</p>
-    </div>
+    <!-- HEADER / NAV -->
+    <header role="banner">
+        <div class="brand">
+            <h1 aria-label="DreamSwap">🌙 DreamSwap</h1>
+            <p class="tagline">Mercado de sueños personalizados</p>
+        </div>
 
-    <nav aria-label="Navegación principal">
-      <ul>
-        <li><a href="#home" data-nav>Inicio</a></li>
-        <li><a href="#catalogo" data-nav>Catálogo</a></li>
-        <li><a href="#carrito" data-nav>Carrito</a></li>
-        <li><a href="#perfil" data-nav>Perfil</a></li>
-        <li><a href="#blog" data-nav>Guía & Ciencia</a></li>
-        <li><a href="#fidelizacion" data-nav>Créditos REM</a></li>
-        <li><a href="#ingresar" data-nav>Ingresar</a></li>
-      </ul>
-    </nav>
-  </header>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="#home" data-nav>Inicio</a></li>
+                <li><a href="#catalogo" data-nav>Catálogo</a></li>
+                <li><a href="#carrito" data-nav>Carrito</a></li>
+                <li><a href="#perfil" data-nav>Perfil</a></li>
+                <li><a href="#blog" data-nav>Guía & Ciencia</a></li>
+                <li><a href="#fidelizacion" data-nav>Créditos REM</a></li>
+                <li><a href="#ingresar" data-nav>Ingresar</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main id="contenido" tabindex="-1">
-    <!-- ========================================= -->
-    <!-- PANTALLA 1: HOME / LANDING                 -->
-    <!-- ========================================= -->
-    <section id="home" class="screen" aria-labelledby="home-title">
-      <h2 id="home-title">Bienvenido a DreamSwap</h2>
-      <p>Convierte tus noches en experiencias memorables. Explora, personaliza y programa tu próximo sueño.</p>
+    <main id="contenido" tabindex="-1">
+        <!-- ========================================= -->
+        <!-- PANTALLA 1: HOME / LANDING                 -->
+        <!-- ========================================= -->
+        <section id="home" class="screen" aria-labelledby="home-title">
+            <h2 id="home-title">Bienvenido a DreamSwap</h2>
+            <p>Convierte tus noches en experiencias memorables. Explora, personaliza y programa tu próximo sueño.</p>
 
-      <form aria-label="Buscador de sueños" data-screen="home">
-        <label for="q">¿Qué te gustaría soñar esta noche?</label>
-        <input id="q" name="q" type="search" placeholder="Aventura, romance, misterio…"/>
-        <button type="submit">Buscar</button>
-      </form>
+            <form aria-label="Buscador de sueños" data-screen="home">
+                <label for="q">¿Qué te gustaría soñar esta noche?</label>
+                <input id="q" name="q" type="search" placeholder="Aventura, romance, misterio…" />
+                <button type="submit">Buscar</button>
+            </form>
 
-      <section aria-labelledby="home-destacados-title">
-        <h3 id="home-destacados-title">Destacados de hoy</h3>
-        <ul class="cards" data-testid="home-destacados">
-          <li>
-            <article>
-              <h4>Safari en nubes</h4>
-              <p>Una travesía aérea entre jirafas de vapor y ríos de algodón.</p>
-              <a href="#detalle-sueno" data-action="ver-detalle" data-id="DS001">Ver detalle</a>
-            </article>
-          </li>
-          <li>
-            <article>
-              <h4>Concierto con tu banda favorita</h4>
-              <p>Backstage, duetos imposibles y un final épico al amanecer.</p>
-              <a href="#detalle-sueno" data-action="ver-detalle" data-id="DS002">Ver detalle</a>
-            </article>
-          </li>
-          <li>
-            <article>
-              <h4>Tiempo con un ser querido</h4>
-              <p>Un reencuentro cálido para cerrar ciclos y sanar.</p>
-              <a href="#detalle-sueno" data-action="ver-detalle" data-id="DS003">Ver detalle</a>
-            </article>
-          </li>
-        </ul>
-      </section>
-    </section>
- 
-    <!-- ========================================= -->
-    <!-- PANTALLA 2: CATÁLOGO                       -->
-    <!-- ========================================= -->
-    <section id="catalogo" class="screen" aria-labelledby="catalogo-title">
-      <h2 id="catalogo-title">Catálogo de Sueños</h2>
-
-      <aside aria-label="Filtros">
-        <form data-screen="catalogo-filtros">
-          <fieldset>
-            <legend>Categorías</legend>
-            <label><input type="checkbox" name="cat" value="aventura" /> Aventura</label>
-            <label><input type="checkbox" name="cat" value="romance" /> Romance</label>
-            <label><input type="checkbox" name="cat" value="misterio" /> Misterio</label>
-            <label><input type="checkbox" name="cat" value="ficcion" /> Ciencia ficción</label>
-            <label><input type="checkbox" name="cat" value="comedia" /> Comedia</label>
-            <label><input type="checkbox" name="cat" value="pesadilla" /> Pesadillas controladas</label>
-          </fieldset>
-
-          <fieldset>
-            <legend>Duración</legend>
-            <label for="duracion">Minutos</label>
-            <input id="duracion" name="duracion" type="number" min="5" step="5" placeholder="30" />
-          </fieldset>
-
-          <fieldset>
-            <legend>Intensidad emocional</legend>
-            <label for="intensidad">Nivel</label>
-            <select id="intensidad" name="intensidad">
-              <option value="suave">Suave</option>
-              <option value="media">Media</option>
-              <option value="alta">Alta</option>
-            </select>
-          </fieldset
-
-          <button type="submit">Aplicar filtros</button>
-        </form>
-      </aside>
-
-      <section aria-labelledby="catalogo-listado-title">
-        <h3 id="catalogo-listado-title">Resultados</h3>
-        <ul class="grid" data-testid="catalogo-listado">
-          <li>
-            <article>
-              <header>
-                <h4>Explorador de ciudades perdidas</h4>
-                <p class="meta">Duración: 45 min • Intensidad: Media • Rareza: ★★☆</p>
-              </header>
-              <p>Persigue pistas y descubre secretos ocultos con banda sonora inmersiva 8D.</p>
-              <footer>
-                <a href="#detalle-sueno" data-action="ver-detalle" data-id="DS101">Ver detalle</a>
-                <a href="#carrito" data-action="agregar" data-id="DS101">Agregar al carrito</a>
-              </footer>
-            </article>
-          </li>
-          <li>
-            <article>
-              <header>
-                <h4>Comedia improvisada con tus amigos</h4>
-                <p class="meta">Duración: 30 min • Intensidad: Suave • Rareza: ★☆☆</p>
-              </header>
-              <p>Risas espontáneas, escenas absurdas y final feliz garantizado.</p>
-              <footer>
-                <a href="#detalle-sueno" data-action="ver-detalle" data-id="DS102">Ver detalle</a>
-                <a href="#carrito" data-action="agregar" data-id="DS102">Agregar al carrito</a>
-              </footer>
-            </article>
-          </li>
-        </ul>
-      </section>
-    </section>
-
-    <!-- ========================================= -->
-    <!-- PANTALLA 3: DETALLE DE SUEÑO               -->
-    <!-- ========================================= -->
-    <section id="detalle-sueno" class="screen" aria-labelledby="detalle-title">
-      <h2 id="detalle-title">Detalle del Sueño</h2>
-      <article data-id="DS101">
-        <header>
-          <h3>Explorador de ciudades perdidas</h3>
-          <p class="meta">Duración base: 45 min • Intensidad: Media • Rareza: ★★☆</p>
-        </header>
-        <p>Vive una aventura inolvidable entre ruinas antiguas y mapas que cambian en tiempo real.</p>
-
-        <form aria-label="Personalización del sueño" data-screen="detalle-config">
-          <fieldset>
-            <legend>Personaliza tu experiencia</legend>
-            <label for="duracion-detalle">Duración (min)</label>
-            <input id="duracion-detalle" name="duracion" type="number" min="15" step="5" value="45"/>
-
-            <label for="intensidad-detalle">Intensidad</label>
-            <select id="intensidad-detalle" name="intensidad">
-              <option value="suave">Suave</option>
-              <option value="media" selected>Media</option>
-              <option value="alta">Alta</option>
-            </select>
-
-            <label for="extras">Extras</label>
-            <select id="extras" name="extras" multiple aria-describedby="extras-help">
-              <option value="8d">Audio 8D</option>
-              <option value="lucido">Control lúcido</option>
-              <option value="cameos">Cameos sorpresa</option>
-            </select>
-            <small id="extras-help">Mantén presionado Ctrl (o Cmd) para seleccionar varios.</small>
-          </fieldset>
-
-          <button type="submit" data-action="agregar">Agregar al carrito</button>
-        </form>
-
-        <section aria-labelledby="resenas-title">
-          <h4 id="resenas-title">Reseñas</h4>
-          <ul>
-            <li>
-              <p><strong>Ana</strong> ★★★★★ – "La mejor aventura sin salir de la cama"</p>
-            </li>
-            <li>
-              <p><strong>Marco</strong> ★★★★☆ – "Gran ambientación, hubiese querido más minutos"</p>
-            </li>
-          </ul>
+            <section aria-labelledby="home-destacados-title">
+                <h3 id="home-destacados-title">Destacados de hoy</h3>
+                <ul class="cards" data-testid="home-destacados">
+                    <li>
+                        <article>
+                            <h4>Safari en nubes</h4>
+                            <p>Una travesía aérea entre jirafas de vapor y ríos de algodón.</p>
+                            <a href="#detalle-sueno" data-action="ver-detalle" data-id="DS001">Ver detalle</a>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <h4>Concierto con tu banda favorita</h4>
+                            <p>Backstage, duetos imposibles y un final épico al amanecer.</p>
+                            <a href="#detalle-sueno" data-action="ver-detalle" data-id="DS002">Ver detalle</a>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <h4>Tiempo con un ser querido</h4>
+                            <p>Un reencuentro cálido para cerrar ciclos y sanar.</p>
+                            <a href="#detalle-sueno" data-action="ver-detalle" data-id="DS003">Ver detalle</a>
+                        </article>
+                    </li>
+                </ul>
+            </section>
         </section>
-      </article>
-    </section>
 
-    <!-- ========================================= -->
-    <!-- PANTALLA 4: CARRITO                        -->
-    <!-- ========================================= -->
-    <section id="carrito" class="screen" aria-labelledby="carrito-title">
-      <h2 id="carrito-title">Tu Carrito</h2>
+        <!-- ========================================= -->
+        <!-- PANTALLA 2: CATÁLOGO                       -->
+        <!-- ========================================= -->
+        <section id="catalogo" class="screen" aria-labelledby="catalogo-title">
+            <h2 id="catalogo-title">Catálogo de Sueños</h2>
 
-      <table aria-describedby="carrito-resumen">
-        <caption id="carrito-resumen">Resumen de sueños seleccionados</caption>
-        <thead>
-          <tr>
-            <th scope="col">Sueño</th>
-            <th scope="col">Duración</th>
-            <th scope="col">Intensidad</th>
-            <th scope="col">Extras</th>
-            <th scope="col">Subtotal</th>
-            <th scope="col">Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr data-id="DS101">
-            <td>Explorador de ciudades perdidas</td>
-            <td>45 min</td>
-            <td>Media</td>
-            <td>Audio 8D</td>
-            <td>24 CR (Créditos REM)</td>
-            <td>
-              <a href="#" data-action="editar">Editar</a>
-              <a href="#" data-action="eliminar">Eliminar</a>
-            </td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="4">Total</td>
-            <td>24 CR</td>
-            <td><a href="#checkout">Ir a pagar</a></td>
-          </tr>
-        </tfoot>
-      </table>
-    </section>
+            <aside aria-label="Filtros">
+                <form data-screen="catalogo-filtros">
+                    <fieldset>
+                        <legend>Categorías</legend>
+                        <label><input type="checkbox" name="cat" value="aventura" /> Aventura</label>
+                        <label><input type="checkbox" name="cat" value="romance" /> Romance</label>
+                        <label><input type="checkbox" name="cat" value="misterio" /> Misterio</label>
+                        <label><input type="checkbox" name="cat" value="ficcion" /> Ciencia ficción</label>
+                        <label><input type="checkbox" name="cat" value="comedia" /> Comedia</label>
+                        <label><input type="checkbox" name="cat" value="pesadilla" /> Pesadillas controladas</label>
+                    </fieldset>
 
-    <!-- ========================================= -->
-    <!-- PANTALLA 5: CHECKOUT / PROGRAMACIÓN        -->
-    <!-- ========================================= -->
-    <section id="checkout" class="screen" aria-labelledby="checkout-title">
-      <h2 id="checkout-title">Programar y Confirmar</h2>
+                    <fieldset>
+                        <legend>Duración</legend>
+                        <label for="duracion">Minutos</label>
+                        <input id="duracion" name="duracion" type="number" min="5" step="5" placeholder="30" />
+                    </fieldset>
 
-      <form aria-label="Checkout" data-screen="checkout">
-        <fieldset>
-          <legend>Ventana de entrega</legend>
-          <label for="fecha">Fecha</label>
-          <input type="date" id="fecha" name="fecha" />
+                    <fieldset>
+                        <legend>Intensidad emocional</legend>
+                        <label for="intensidad">Nivel</label>
+                        <select id="intensidad" name="intensidad">
+                            <option value="suave">Suave</option>
+                            <option value="media">Media</option>
+                            <option value="alta">Alta</option>
+                        </select>
+                    </fieldset <button type="submit">Aplicar filtros</button>
+                </form>
+            </aside>
 
-          <label for="hora">Hora de inicio del sueño</label>
-          <input type="time" id="hora" name="hora" />
-        </fieldset>
+            <section aria-labelledby="catalogo-listado-title">
+                <h3 id="catalogo-listado-title">Resultados</h3>
+                <ul class="grid" data-testid="catalogo-listado">
+                    <li>
+                        <article>
+                            <header>
+                                <h4>Explorador de ciudades perdidas</h4>
+                                <p class="meta">Duración: 45 min • Intensidad: Media • Rareza: ★★☆</p>
+                            </header>
+                            <p>Persigue pistas y descubre secretos ocultos con banda sonora inmersiva 8D.</p>
+                            <footer>
+                                <a href="#detalle-sueno" data-action="ver-detalle" data-id="DS101">Ver detalle</a>
+                                <a href="#carrito" data-action="agregar" data-id="DS101">Agregar al carrito</a>
+                            </footer>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h4>Comedia improvisada con tus amigos</h4>
+                                <p class="meta">Duración: 30 min • Intensidad: Suave • Rareza: ★☆☆</p>
+                            </header>
+                            <p>Risas espontáneas, escenas absurdas y final feliz garantizado.</p>
+                            <footer>
+                                <a href="#detalle-sueno" data-action="ver-detalle" data-id="DS102">Ver detalle</a>
+                                <a href="#carrito" data-action="agregar" data-id="DS102">Agregar al carrito</a>
+                            </footer>
+                        </article>
+                    </li>
+                </ul>
+            </section>
+        </section>
 
-        <fieldset>
-          <legend>Pago</legend>
-          <label for="metodo">Método</label>
-          <select id="metodo" name="metodo">
-            <option value="rem">Créditos REM</option>
-            <option value="tc">Tarjeta</option>
-          </select>
+        <!-- ========================================= -->
+        <!-- PANTALLA 3: DETALLE DE SUEÑO               -->
+        <!-- ========================================= -->
+        <section id="detalle-sueno" class="screen" aria-labelledby="detalle-title">
+            <h2 id="detalle-title">Detalle del Sueño</h2>
+            <article data-id="DS101">
+                <header>
+                    <h3>Explorador de ciudades perdidas</h3>
+                    <p class="meta">Duración base: 45 min • Intensidad: Media • Rareza: ★★☆</p>
+                </header>
+                <p>Vive una aventura inolvidable entre ruinas antiguas y mapas que cambian en tiempo real.</p>
 
-          <label for="cupon">Cupón</label>
-          <input type="text" id="cupon" name="cupon" placeholder="ONIRICO10" />
-        </fieldset>
+                <form aria-label="Personalización del sueño" data-screen="detalle-config">
+                    <fieldset>
+                        <legend>Personaliza tu experiencia</legend>
+                        <label for="duracion-detalle">Duración (min)</label>
+                        <input id="duracion-detalle" name="duracion" type="number" min="15" step="5" value="45" />
 
-        <button type="submit">Confirmar pedido</button>
-      </form>
-    </section>
+                        <label for="intensidad-detalle">Intensidad</label>
+                        <select id="intensidad-detalle" name="intensidad">
+                            <option value="suave">Suave</option>
+                            <option value="media" selected>Media</option>
+                            <option value="alta">Alta</option>
+                        </select>
 
-    <!-- ========================================= -->
-    <!-- PANTALLA 6: PERFIL DEL USUARIO             -->
-    <!-- ========================================= -->
-    <section id="perfil" class="screen" aria-labelledby="perfil-title">
-      <h2 id="perfil-title">Mi Perfil</h2>
+                        <label for="extras">Extras</label>
+                        <select id="extras" name="extras" multiple aria-describedby="extras-help">
+                            <option value="8d">Audio 8D</option>
+                            <option value="lucido">Control lúcido</option>
+                            <option value="cameos">Cameos sorpresa</option>
+                        </select>
+                        <small id="extras-help">Mantén presionado Ctrl (o Cmd) para seleccionar varios.</small>
+                    </fieldset>
 
-      <form aria-label="Perfil" data-screen="perfil">
-        <fieldset>
-          <legend>Datos personales</legend>
-          <label for="nombre">Nombre</label>
-          <input id="nombre" name="nombre" type="text" />
+                    <button type="submit" data-action="agregar">Agregar al carrito</button>
+                </form>
 
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" />
+                <section aria-labelledby="resenas-title">
+                    <h4 id="resenas-title">Reseñas</h4>
+                    <ul>
+                        <li>
+                            <p><strong>Ana</strong> ★★★★★ – "La mejor aventura sin salir de la cama"</p>
+                        </li>
+                        <li>
+                            <p><strong>Marco</strong> ★★★★☆ – "Gran ambientación, hubiese querido más minutos"</p>
+                        </li>
+                    </ul>
+                </section>
+            </article>
+        </section>
 
-          <label for="rem">ID Onírica (opcional)</label>
-          <input id="rem" name="rem" type="text" placeholder="REM-XXXX" />
-        </fieldset>
+        <!-- ========================================= -->
+        <!-- PANTALLA 4: CARRITO                        -->
+        <!-- ========================================= -->
+        <section id="carrito" class="screen" aria-labelledby="carrito-title">
+            <h2 id="carrito-title">Tu Carrito</h2>
 
-        <fieldset>
-          <legend>Preferencias oníricas</legend>
-          <label><input type="checkbox" name="pref" value="suave"/> Sueños suaves</label>
-          <label><input type="checkbox" name="pref" value="epico"/> Finales épicos</label>
-          <label><input type="checkbox" name="pref" value="lucido"/> Control lúcido</label>
-        </fieldset>
+            <table aria-describedby="carrito-resumen">
+                <caption id="carrito-resumen">Resumen de sueños seleccionados</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Sueño</th>
+                        <th scope="col">Duración</th>
+                        <th scope="col">Intensidad</th>
+                        <th scope="col">Extras</th>
+                        <th scope="col">Subtotal</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-id="DS101">
+                        <td>Explorador de ciudades perdidas</td>
+                        <td>45 min</td>
+                        <td>Media</td>
+                        <td>Audio 8D</td>
+                        <td>24 CR (Créditos REM)</td>
+                        <td>
+                            <a href="#" data-action="editar">Editar</a>
+                            <a href="#" data-action="eliminar">Eliminar</a>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">Total</td>
+                        <td>24 CR</td>
+                        <td><a href="#checkout">Ir a pagar</a></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
 
-        <button type="submit">Guardar</button>
-      </form>
+        <!-- ========================================= -->
+        <!-- PANTALLA 5: CHECKOUT / PROGRAMACIÓN        -->
+        <!-- ========================================= -->
+        <section id="checkout" class="screen" aria-labelledby="checkout-title">
+            <h2 id="checkout-title">Programar y Confirmar</h2>
 
-      <section aria-labelledby="historial-title">
-        <h3 id="historial-title">Historial de experiencias</h3>
-        <ul>
-          <li>"Concierto con tu banda favorita" – 30 min – ★★★★★</li>
-          <li>"Tiempo con un ser querido" – 20 min – ★★★★☆</li>
-        </ul>
-      </section>
-    </section>
+            <form aria-label="Checkout" data-screen="checkout">
+                <fieldset>
+                    <legend>Ventana de entrega</legend>
+                    <label for="fecha">Fecha</label>
+                    <input type="date" id="fecha" name="fecha" />
 
-    <!-- ========================================= -->
-    <!-- PANTALLA 7: LOGIN / REGISTRO               -->
-    <!-- ========================================= -->
-    <section id="ingresar" class="screen" aria-labelledby="ingresar-title">
-      <h2 id="ingresar-title">Ingresar / Crear cuenta</h2>
+                    <label for="hora">Hora de inicio del sueño</label>
+                    <input type="time" id="hora" name="hora" />
+                </fieldset>
 
-      <div class="auth-grid">
-        <form aria-label="Ingresar" data-screen="login">
-          <fieldset>
-            <legend>Ingresar</legend>
-            <label for="login-email">Email</label>
-            <input id="login-email" type="email" name="email" autocomplete="username" required />
-            <label for="login-pass">Contraseña</label>
-            <input id="login-pass" type="password" name="password" autocomplete="current-password" required />
-          </fieldset>
-          <button type="submit">Ingresar</button>
-          <a href="#" data-action="recuperar">¿Olvidaste tu contraseña?</a>
-        </form>
+                <fieldset>
+                    <legend>Pago</legend>
+                    <label for="metodo">Método</label>
+                    <select id="metodo" name="metodo">
+                        <option value="rem">Créditos REM</option>
+                        <option value="tc">Tarjeta</option>
+                    </select>
 
-        <form aria-label="Registro" data-screen="signup">
-          <fieldset>
-            <legend>Crear cuenta</legend>
-            <label for="signup-nombre">Nombre</label>
-            <input id="signup-nombre" type="text" name="nombre" required />
-            <label for="signup-email">Email</label>
-            <input id="signup-email" type="email" name="email" required />
-            <label for="signup-pass">Contraseña</label>
-            <input id="signup-pass" type="password" name="password" autocomplete="new-password" required />
-          </fieldset>
-          <button type="submit">Crear cuenta</button>
-        </form>
-      </div>
-    </section>
+                    <label for="cupon">Cupón</label>
+                    <input type="text" id="cupon" name="cupon" placeholder="ONIRICO10" />
+                </fieldset>
 
-    <!-- ========================================= -->
-    <!-- PANTALLA 8: ESTADO DE PEDIDO (TRACKING)    -->
-    <!-- ========================================= -->
-    <section id="estado-pedido" class="screen" aria-labelledby="estado-title">
-      <h2 id="estado-title">Estado de tu experiencia</h2>
+                <button type="submit">Confirmar pedido</button>
+            </form>
+        </section>
 
-      <form aria-label="Buscar pedido" data-screen="tracking">
-        <label for="pedido-id">ID de pedido</label>
-        <input id="pedido-id" name="pedido-id" type="text" placeholder="DS-2025-0001" />
-        <button type="submit">Consultar</button>
-      </form>
+        <!-- ========================================= -->
+        <!-- PANTALLA 6: PERFIL DEL USUARIO             -->
+        <!-- ========================================= -->
+        <section id="perfil" class="screen" aria-labelledby="perfil-title">
+            <h2 id="perfil-title">Mi Perfil</h2>
 
-      <ol class="progreso" aria-label="Progreso de instalación onírica">
-        <li>Preparando tu sueño</li>
-        <li>Sincronizando con tu ciclo REM</li>
-        <li>Listo para iniciar</li>
-      </ol>
-    </section>
+            <form aria-label="Perfil" data-screen="perfil">
+                <fieldset>
+                    <legend>Datos personales</legend>
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" name="nombre" type="text" />
 
-    <!-- ========================================= -->
-    <!-- PANTALLA 9: RESEÑAS                        -->
-    <!-- ========================================= -->
-    <section id="resenas" class="screen" aria-labelledby="resenas-global-title">
-      <h2 id="resenas-global-title">Reseñas de la Comunidad</h2>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" />
 
-      <form aria-label="Enviar reseña" data-screen="resenas">
-        <label for="producto">Sueño</label>
-        <input id="producto" name="producto" type="text" placeholder="ID o nombre del sueño" />
+                    <label for="rem">ID Onírica (opcional)</label>
+                    <input id="rem" name="rem" type="text" placeholder="REM-XXXX" />
+                </fieldset>
 
-        <label for="rating">Calificación</label>
-        <select id="rating" name="rating">
-          <option value="5">★★★★★</option>
-          <option value="4">★★★★☆</option>
-          <option value="3">★★★☆☆</option>
-          <option value="2">★★☆☆☆</option>
-          <option value="1">★☆☆☆☆</option>
-        </select>
+                <fieldset>
+                    <legend>Preferencias oníricas</legend>
+                    <label><input type="checkbox" name="pref" value="suave" /> Sueños suaves</label>
+                    <label><input type="checkbox" name="pref" value="epico" /> Finales épicos</label>
+                    <label><input type="checkbox" name="pref" value="lucido" /> Control lúcido</label>
+                </fieldset>
 
-        <label for="comentario">Comentario</label>
-        <textarea id="comentario" name="comentario" rows="4" placeholder="Cuenta tu experiencia"></textarea>
+                <button type="submit">Guardar</button>
+            </form>
 
-        <button type="submit">Publicar</button>
-      </form>
+            <section aria-labelledby="historial-title">
+                <h3 id="historial-title">Historial de experiencias</h3>
+                <ul>
+                    <li>"Concierto con tu banda favorita" – 30 min – ★★★★★</li>
+                    <li>"Tiempo con un ser querido" – 20 min – ★★★★☆</li>
+                </ul>
+            </section>
+        </section>
 
-      <ul class="lista-resenas">
-        <li><strong>Lucía</strong> – ★★★★★ – "Desperté inspirada para toda la semana"</li>
-        <li><strong>Pablo</strong> – ★★★★☆ – "Me encantó el audio 8D"</li>
-      </ul>
-    </section>
+        <!-- ========================================= -->
+        <!-- PANTALLA 7: LOGIN / REGISTRO               -->
+        <!-- ========================================= -->
+        <section id="ingresar" class="screen" aria-labelledby="ingresar-title">
+            <h2 id="ingresar-title">Ingresar / Crear cuenta</h2>
 
-    <!-- ========================================= -->
-    <!-- PANTALLA 10: BLOG / EDUCACIÓN              -->
-    <!-- ========================================= -->
-    <section id="blog" class="screen" aria-labelledby="blog-title">
-      <h2 id="blog-title">Guía y Ciencia del Sueño</h2>
+            <div class="auth-grid">
+                <form aria-label="Ingresar" data-screen="login">
+                    <fieldset>
+                        <legend>Ingresar</legend>
+                        <label for="login-email">Email</label>
+                        <input id="login-email" type="email" name="email" autocomplete="username" required />
+                        <label for="login-pass">Contraseña</label>
+                        <input id="login-pass" type="password" name="password" autocomplete="current-password"
+                            required />
+                    </fieldset>
+                    <button type="submit">Ingresar</button>
+                    <a href="#" data-action="recuperar">¿Olvidaste tu contraseña?</a>
+                </form>
 
-      <article>
-        <h3>Cómo recordar mejor tus sueños</h3>
-        <p>Pequeños hábitos que ayudan a consolidar memorias oníricas al despertar.</p>
-        <a href="#" data-action="leer">Leer más</a>
-      </article>
+                <form aria-label="Registro" data-screen="signup">
+                    <fieldset>
+                        <legend>Crear cuenta</legend>
+                        <label for="signup-nombre">Nombre</label>
+                        <input id="signup-nombre" type="text" name="nombre" required />
+                        <label for="signup-email">Email</label>
+                        <input id="signup-email" type="email" name="email" required />
+                        <label for="signup-pass">Contraseña</label>
+                        <input id="signup-pass" type="password" name="password" autocomplete="new-password" required />
+                    </fieldset>
+                    <button type="submit">Crear cuenta</button>
+                </form>
+            </div>
+        </section>
 
-      <article>
-        <h3>¿Qué es el sueño lúcido?</h3>
-        <p>Fundamentos, técnicas seguras y cómo aplicarlo en DreamSwap.</p>
-        <a href="#" data-action="leer">Leer más</a>
-      </article>
-    </section>
+        <!-- ========================================= -->
+        <!-- PANTALLA 8: ESTADO DE PEDIDO (TRACKING)    -->
+        <!-- ========================================= -->
+        <section id="estado-pedido" class="screen" aria-labelledby="estado-title">
+            <h2 id="estado-title">Estado de tu experiencia</h2>
 
-    <!-- ========================================= -->
-    <!-- PANTALLA 11: FIDELIZACIÓN                  -->
-    <!-- ========================================= -->
-    <section id="fidelizacion" class="screen" aria-labelledby="fidelizacion-title">
-      <h2 id="fidelizacion-title">Créditos REM & Recompensas</h2>
+            <form aria-label="Buscar pedido" data-screen="tracking">
+                <label for="pedido-id">ID de pedido</label>
+                <input id="pedido-id" name="pedido-id" type="text" placeholder="DS-2025-0001" />
+                <button type="submit">Consultar</button>
+            </form>
 
-      <p>Acumula créditos por cada experiencia y canjéalos por mejoras.</p>
+            <ol class="progreso" aria-label="Progreso de instalación onírica">
+                <li>Preparando tu sueño</li>
+                <li>Sincronizando con tu ciclo REM</li>
+                <li>Listo para iniciar</li>
+            </ol>
+        </section>
 
-      <table aria-describedby="tabla-fidelizacion-desc">
-        <caption id="tabla-fidelizacion-desc">Niveles y beneficios</caption>
-        <thead>
-          <tr>
-            <th scope="col">Nivel</th>
-            <th scope="col">Requisito</th>
-            <th scope="col">Beneficios</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Explorador</td>
-            <td>0–199 CR</td>
-            <td>Cupones del 5%</td>
-          </tr>
-          <tr>
-            <td>Viajero</td>
-            <td>200–499 CR</td>
-            <td>1 extra gratis al mes</td>
-          </tr>
-          <tr>
-            <td>Arquitecto</td>
-            <td>500+ CR</td>
-            <td>Pruebas de sueños beta</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
+        <!-- ========================================= -->
+        <!-- PANTALLA 9: RESEÑAS                        -->
+        <!-- ========================================= -->
+        <section id="resenas" class="screen" aria-labelledby="resenas-global-title">
+            <h2 id="resenas-global-title">Reseñas de la Comunidad</h2>
 
-  <!-- FOOTER -->
-  <footer role="contentinfo">
-    <nav aria-label="Legal">
-      <ul>
-        <li><a href="#">Términos</a></li>
-        <li><a href="#">Privacidad</a></li>
-        <li><a href="#estado-pedido">Estado de pedido</a></li>
-      </ul>
-    </nav>
-    <small>© 2025 DreamSwap</small>
-  </footer>
+            <form aria-label="Enviar reseña" data-screen="resenas">
+                <label for="producto">Sueño</label>
+                <input id="producto" name="producto" type="text" placeholder="ID o nombre del sueño" />
+
+                <label for="rating">Calificación</label>
+                <select id="rating" name="rating">
+                    <option value="5">★★★★★</option>
+                    <option value="4">★★★★☆</option>
+                    <option value="3">★★★☆☆</option>
+                    <option value="2">★★☆☆☆</option>
+                    <option value="1">★☆☆☆☆</option>
+                </select>
+
+                <label for="comentario">Comentario</label>
+                <textarea id="comentario" name="comentario" rows="4" placeholder="Cuenta tu experiencia"></textarea>
+
+                <button type="submit">Publicar</button>
+            </form>
+
+            <ul class="lista-resenas">
+                <li><strong>Lucía</strong> – ★★★★★ – "Desperté inspirada para toda la semana"</li>
+                <li><strong>Pablo</strong> – ★★★★☆ – "Me encantó el audio 8D"</li>
+            </ul>
+        </section>
+
+        <!-- ========================================= -->
+        <!-- PANTALLA 10: BLOG / EDUCACIÓN              -->
+        <!-- ========================================= -->
+        <section id="blog" class="screen" aria-labelledby="blog-title">
+            <h2 id="blog-title">Guía y Ciencia del Sueño</h2>
+
+            <article>
+                <h3>Cómo recordar mejor tus sueños</h3>
+                <p>Pequeños hábitos que ayudan a consolidar memorias oníricas al despertar.</p>
+                <a href="#" data-action="leer">Leer más</a>
+            </article>
+
+            <article>
+                <h3>¿Qué es el sueño lúcido?</h3>
+                <p>Fundamentos, técnicas seguras y cómo aplicarlo en DreamSwap.</p>
+                <a href="#" data-action="leer">Leer más</a>
+            </article>
+        </section>
+
+        <!-- ========================================= -->
+        <!-- PANTALLA 11: FIDELIZACIÓN                  -->
+        <!-- ========================================= -->
+        <section id="fidelizacion" class="screen" aria-labelledby="fidelizacion-title">
+            <h2 id="fidelizacion-title">Créditos REM & Recompensas</h2>
+
+            <p>Acumula créditos por cada experiencia y canjéalos por mejoras.</p>
+
+            <table aria-describedby="tabla-fidelizacion-desc">
+                <caption id="tabla-fidelizacion-desc">Niveles y beneficios</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Nivel</th>
+                        <th scope="col">Requisito</th>
+                        <th scope="col">Beneficios</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Explorador</td>
+                        <td>0–199 CR</td>
+                        <td>Cupones del 5%</td>
+                    </tr>
+                    <tr>
+                        <td>Viajero</td>
+                        <td>200–499 CR</td>
+                        <td>1 extra gratis al mes</td>
+                    </tr>
+                    <tr>
+                        <td>Arquitecto</td>
+                        <td>500+ CR</td>
+                        <td>Pruebas de sueños beta</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer role="contentinfo">
+        <nav aria-label="Legal">
+            <ul>
+                <li><a href="#">Términos</a></li>
+                <li><a href="#">Privacidad</a></li>
+                <li><a href="#estado-pedido">Estado de pedido</a></li>
+            </ul>
+        </nav>
+        <small>© 2025 DreamSwap</small>
+    </footer>
 </body>
+
 </html>
