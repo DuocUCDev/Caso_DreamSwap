@@ -46,6 +46,9 @@
         .table thead {
             background: #1a2130;
         }
+        
+        .table thead th { color: white; }
+        .table tbody td { color: white; }
 
         .table> :not(caption)>*>* {
             background: transparent;
