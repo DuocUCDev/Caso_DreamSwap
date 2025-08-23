@@ -1,0 +1,75 @@
+ :root {
+            --ds-accent: #7c5cff;
+            --ds-accent-2: #2ee6d6;
+        }
+
+        body {
+            background: linear-gradient(180deg, #0b0f14, #121823);
+            color: #e6ecf2;
+        }
+
+        .bg-surface {
+            background: rgba(18, 24, 35, .75);
+            border: 1px solid #243042;
+        }
+
+        .text-muted {
+            color: #aab7c4 !important;
+        }
+
+        a {
+            color: var(--ds-accent-2);
+        }
+
+        .btn-ds {
+            background: linear-gradient(90deg, var(--ds-accent), var(--ds-accent-2));
+            border: 0;
+            color: #0b0f14;
+            font-weight: 700;
+        }
+
+        .ds-card {
+            background: rgba(18, 24, 35, .9);
+            border: 1px solid #243042;
+            color: white;
+        }
+
+        .badge-rare {
+            background: #27324a;
+            border: 1px solid #3a4b6c;
+        }
+
+        .table {
+            color: #e6ecf2;
+        }
+
+        .table thead {
+            background: #1a2130;
+        }
+
+        .table> :not(caption)>*>* {
+            background: transparent;
+            border-color: #243042;
+        }
+
+        .form-control,
+        .form-select {
+            background: #0e141d;
+            color: #e6ecf2;
+            border-color: #243042;
+        }
+
+        .form-control::placeholder {
+            color: #8aa1b7;
+        }
+
+        .navbar {
+            background: rgba(18, 24, 35, .7);
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid #243042;
+        }
+
+        .section-gap {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
