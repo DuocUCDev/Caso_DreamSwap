@@ -1,14 +1,12 @@
-import AppNavbar from "./components/layout/Navbar";
-import AppFooter from "./components/layout/Footer";
+import AppNavbar from './components/layout/Navbar.jsx';
+import AppFooter from './components/layout/Footer.jsx';
 import './styles/theme.css';
 
-export default function App() {
+export default function App({ children }) {
   return (
     <>
       <AppNavbar />
-      <main className="container my-4" role="main">
-        {/* Aquí irían las rutas y el contenido principal */}
-      </main>
+      <main className="container my-4">{children}</main>
       <AppFooter />
     </>
   );
