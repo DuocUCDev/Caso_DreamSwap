@@ -1,19 +1,18 @@
-import { dreams } from "../utils/mockDreams";
-import DreamCard from "../components/DreamCard";
+import { Container, Row, Col } from "react-bootstrap";
+import { dreams } from "../utils/mockDreams.js";
+import DreamCard from "../components/DreamCard.jsx";
 
-export default function Catalog(){
+export default function Catalog() {
   return (
-    <>
-      <h1 className="h3 mb-3">Catálogo</h1>
-      <div className="row g-3">
-        {
-          dreams.map(d => (
-            <div className="col-12 col-md-6 col-xl-4" key={d.id}>
-              <DreamCard dream={d} />
-            </div>
-          ))
-        }      
-      </div>
-    </>
+    <Container className="py-4">
+      <h1 className="h3 mb-4">Catálogo</h1>
+      <Row className="g-3">
+        {dreams.map((d) => (
+          <Col md={6} xl={4} key={d.id}>
+            <DreamCard dream={d} />
+          </Col>
+        ))}
+      </Row>
+    </Container>
   );
 }

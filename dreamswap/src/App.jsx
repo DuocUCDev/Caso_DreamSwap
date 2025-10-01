@@ -4,10 +4,12 @@ import './styles/theme.css';
 
 export default function App({ children }) {
   return (
-    <>
+    <div className="d-flex flex-column min-vh-100">
       <AppNavbar />
-      <main className="container my-4">{children}</main>
+      <main className="flex-fill container my-4">
+        {children}
+      </main>
       <AppFooter />
-    </>
+    </div>
   );
 }
