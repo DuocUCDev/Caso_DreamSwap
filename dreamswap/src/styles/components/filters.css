@@ -1,60 +1,4 @@
-/* Importación de componentes */
-@import './components/buttons.css';
-@import './components/filters.css';
-
-/* Variables globales */
-:root {
-    /* Esquema de colores */
-    color-scheme: dark;
-    
-    /* Colores primarios */
-    --primary-gradient-start: #4B6CB7;
-    --primary-gradient-end: #3EBDF3;
-    
-    /* Colores de fondo */
-    --background-start: #0b0f14;
-    --background-end: #121823;
-    
-    /* Colores de texto */
-    --text-primary: #e6ecf2;
-    --text-secondary: rgba(255, 255, 255, 0.5);
-    
-    /* Bordes y transparencias */
-    --border-light: rgba(255, 255, 255, 0.1);
-    --background-card: rgba(11, 15, 20, 0.8);
-    
-    /* Espaciado */
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 0.75rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 1.5rem;
-    --spacing-xl: 2rem;
-    
-    /* Bordes */
-    --border-radius-sm: 6px;
-    --border-radius-md: 8px;
-    --border-radius-lg: 16px;
-}
-
-/* Estilos base */
-body { 
-    background: linear-gradient(180deg, var(--background-start), var(--background-end));
-    color: var(--text-primary);
-}
-
-.gradient-button {
-    background: linear-gradient(90deg, #4B6CB7 0%, #3EBDF3 100%) !important;
-    border: none !important;
-    color: white !important;
-    transition: opacity 0.3s ease !important;
-    font-size: 1.1rem !important;
-    font-weight: 500 !important;
-}
-
-.gradient-button:hover {
-    opacity: 0.9;
-}
-
+/* Estilos para filtros y formularios */
 .filter-card {
     background: rgba(11, 15, 20, 0.8) !important;
     backdrop-filter: blur(10px);
@@ -62,6 +6,7 @@ body {
     border-radius: 16px !important;
 }
 
+/* Checkboxes personalizados */
 .custom-checkbox .form-check-input {
     display: none;
 }
@@ -90,7 +35,9 @@ body {
     border-radius: 2px;
 }
 
-.custom-input, .custom-select {
+/* Inputs y Selects personalizados */
+.custom-input, 
+.custom-select {
     background: rgba(255, 255, 255, 0.05) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-radius: 8px !important;
@@ -99,7 +46,8 @@ body {
     padding: 12px !important;
 }
 
-.custom-input:focus, .custom-select:focus {
+.custom-input:focus, 
+.custom-select:focus {
     border-color: #4B6CB7 !important;
     box-shadow: 0 0 0 0.25rem rgba(75, 108, 183, 0.25) !important;
 }

@@ -9,6 +9,7 @@ import Reviews from '../pages/Reviews.jsx';
 import Blog from '../pages/Blog.jsx';
 import Loyalty from '../pages/Loyalty.jsx';
 import Tracking from '../pages/Tracking.jsx';
+import NotFound from '../pages/NotFound.jsx';
 
 export default function AppRouter(){
   return (
@@ -22,6 +23,7 @@ export default function AppRouter(){
       <Route path="/blog" element={<Blog />} />
       <Route path="/loyalty" element={<Loyalty />} />
       <Route path="/tracking" element={<Tracking />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

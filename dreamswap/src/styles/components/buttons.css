@@ -1,0 +1,13 @@
+/* Estilos para botones */
+.gradient-button {
+    background: linear-gradient(90deg, #4B6CB7 0%, #3EBDF3 100%) !important;
+    border: none !important;
+    color: white !important;
+    transition: opacity 0.3s ease !important;
+    font-size: 1.1rem !important;
+    font-weight: 500 !important;
+}
+
+.gradient-button:hover {
+    opacity: 0.9;
+}

@@ -1,19 +1,27 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { dreams } from '../utils/mockDreams.js';
 import { useMemo, useState } from 'react';
 import { calcPriceCR } from '../utils/pricing.js';
 import { Form, Button } from 'react-bootstrap';
+import { useCart } from '../contexts/CartContext.jsx';
 
 export default function DreamDetail(){
   const { id } = useParams();
+  const navigate = useNavigate();
+  const { addToCart } = useCart();
+
   const dream = useMemo(()=> dreams.find(d => d.id === id), [id]);
   const [duration, setDuration] = useState(dream?.duration ?? 30);
   const [intensity, setIntensity] = useState(dream?.intensity ?? 'Media');
   const [extras, setExtras] = useState([]);
-
-  const price = calcPriceCR({ duration, extras });
+  const subtotal = calcPriceCR({ duration, extras });
 
   if(!dream) return <p>🛌 Sueño no encontrado.</p>;
+
+  const handleAdd = () => {
+    addToCart({ id: dream.id, nombre: dream.title, duracion: duration, intensidad: intensity, extras, subtotal });
+    navigate('/cart');
+  };
 
   return (
     <>
@@ -25,8 +33,7 @@ export default function DreamDetail(){
       <Form className="vstack gap-3">
         <Form.Group>
           <Form.Label>Duración (min)</Form.Label>
-          <Form.Control type="number" min={15} step={5} value={duration}
-            onChange={e=>setDuration(+e.target.value)} />
+          <Form.Control type="number" min={15} step={5} value={duration} onChange={e=>setDuration(+e.target.value)} />
         </Form.Group>
         <Form.Group>
           <Form.Label>Intensidad</Form.Label>
@@ -36,16 +43,15 @@ export default function DreamDetail(){
         </Form.Group>
         <Form.Group>
           <Form.Label>Extras</Form.Label>
-          <Form.Select multiple value={extras}
-            onChange={e=>setExtras(Array.from(e.target.selectedOptions).map(o=>o.value))}>
+          <Form.Select multiple value={extras} onChange={e=>setExtras(Array.from(e.target.selectedOptions).map(o=>o.value))}>
             <option value="8d">Audio 8D</option>
             <option value="lucid">Control lúcido</option>
             <option value="cameos">Cameos sorpresa</option>
           </Form.Select>
         </Form.Group>
         <div className="d-flex align-items-center gap-3">
-          <strong>Precio: {price} CR</strong>
-          <Button variant="light">Agregar al carrito</Button>
+          <strong>Precio: {subtotal} CR</strong>
+          <Button variant="light" onClick={handleAdd}>Agregar al carrito</Button>
         </div>
       </Form>
     </>
