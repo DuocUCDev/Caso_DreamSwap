@@ -11,6 +11,7 @@ import { Register } from '../pages/Register';
 import { Dashboard } from '../pages/admin/Dashboard';
 import { Products } from '../pages/admin/Products';
 import { AdminOrders } from '../pages/admin/AdminOrders';
+import { OrderDetail } from '../pages/admin/OrderDetail';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 import { ProtectedRoute } from '../components/auth/ProtectedRoute';
@@ -55,6 +56,15 @@ export const AppRouter = () => {
               element={
                 <ProtectedRoute requiredRole="admin">
                   <AdminOrders />
+                </ProtectedRoute>
+              }
+            />
+            
+            <Route
+              path="/admin/orders/:id"
+              element={
+                <ProtectedRoute requiredRole="admin">
+                  <OrderDetail />
                 </ProtectedRoute>
               }
             />
